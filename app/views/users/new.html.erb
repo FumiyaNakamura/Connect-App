@@ -1,2 +1,30 @@
-<h1>Users#new</h1>
+<h1>ユーザー登録</h1>
 <p>Find me in app/views/users/new.html.erb</p>
+
+<%= form_for(@user) do |f|  %>
+  <%= f.label :名前  %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :Eメール %>
+  <%= f.email_field :email %>
+  
+  <%= f.label :パスワード %>
+  <%= f.password_field :password %>
+  
+  <%= f.label :パスワード確認 %>
+  <%= f.password_field :password_confirmation %>
+  
+  <%= f.label :アイコン画像 %>
+  <%= f.file_field :image, accept: "image/jpg,image/gif,image/png" %>
+  
+  <%= f.submit "ユーザーを登録する" %>
+<% end %>
+
+<script type="text/javascript">
+  $('#user_image').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>
