@@ -1,0 +1,12 @@
+<h1>ログイン画面</h1>
+
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= f.label :Eメール %>
+  <%= f.email_field :email %>
+  
+  <%= f.label :パスワード %>
+  <%= f.password_field :password %>
+  
+  <%= f.submit :ログイン %>
+
+<% end %>
