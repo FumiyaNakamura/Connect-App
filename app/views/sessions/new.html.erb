@@ -1,12 +1,14 @@
 <h1>ログイン画面</h1>
 
 <%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :Eメール %>
-  <%= f.email_field :email %>
+  <%= f.label :Eメール %><br>
+  <%= f.email_field :email %><br>
   
-  <%= f.label :パスワード %>
-  <%= f.password_field :password %>
+  <%= f.label :パスワード %><br>
+  <%= f.password_field :password %><br>
   
-  <%= f.submit :ログイン %>
+  <%= f.submit :ログイン %><br>
+  
+  <%= link_to "新規登録はこちら", signup_path %>
 
 <% end %>
