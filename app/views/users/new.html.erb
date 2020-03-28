@@ -2,20 +2,20 @@
 <p>Find me in app/views/users/new.html.erb</p>
 
 <%= form_for(@user) do |f|  %>
-  <%= f.label :名前  %>
-  <%= f.text_field :name %>
+  <%= f.label :名前  %><br>
+  <%= f.text_field :name %><br>
   
-  <%= f.label :Eメール %>
-  <%= f.email_field :email %>
+  <%= f.label :Eメール %><br>
+  <%= f.email_field :email %><br>
   
-  <%= f.label :パスワード %>
-  <%= f.password_field :password %>
+  <%= f.label :パスワード %><br>
+  <%= f.password_field :password %><br>
   
-  <%= f.label :パスワード確認 %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.label :パスワード確認 %><br>
+  <%= f.password_field :password_confirmation %><br>
   
-  <%= f.label :アイコン画像 %>
-  <%= f.file_field :image, accept: "image/jpg,image/gif,image/png" %>
+  <%= f.label :アイコン画像 %><br>
+  <%= f.file_field :image, accept: "image/jpg,image/gif,image/png" %><br>
   
   <%= f.submit "ユーザーを登録する" %>
 <% end %>
