@@ -1,5 +1,8 @@
-<h1>Connect</h1>
-<p>今日やることを投稿してみよう</p>
-
-<%= link_to "新規登録", signup_path, class: "btn btn-default" %><br>
-<%= link_to "ログイン", login_path, class: "btn btn-default" %>
+<% if logged_in? %>
+  <%= render "layouts/help" %>
+<% else %>
+  <h1>Connect</h1>
+  <p>今日やることを投稿してみよう</p>
+　<%= link_to "新規登録", signup_path, class: "btn btn-default" %><br>
+　<%= link_to "ログイン", login_path, class: "btn btn-default" %>
+<% end %>
