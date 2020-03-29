@@ -1,4 +1,9 @@
+<h1>ユーザー詳細</h1>
 <h1>
-    <%= image_tag @user.image.url if @user.image? %>
+    <% if @user.image? %>
+      <%= image_tag @user.image.url %>
+    <% else %>
+      <%= image_tag "default.jpg", :size =>'100x100' %>
+    <% end %>
     <%= @user.name %>
 </h1>

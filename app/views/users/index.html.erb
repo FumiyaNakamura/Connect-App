@@ -1,0 +1,18 @@
+<h1>ユーザー一覧</h1>
+
+<%= will_paginate %>
+
+<ul>
+    <% @users.each do |user| %>
+      <p>
+          <% if user.image? %>
+          <%= image_tag user.image.url %>
+          <% else %>
+          <%= image_tag "default.jpg", :size =>'100x100' %>
+          <% end %>
+          <%= link_to user.name, user %>
+      </p>
+    <% end %>
+</ul>
+
+<%= will_paginate %>
