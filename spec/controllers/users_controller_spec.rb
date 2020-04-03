@@ -1,9 +1,7 @@
 require "rails_helper"
+include SessionsHelper
 
 RSpec.describe UsersController, type: :controller do
-    # before do
-    #     @user = FactoryBot.create(:user)
-    # end
     
     describe "#new" do
         it "正常なレスポンスが返ってくる" do
@@ -19,21 +17,17 @@ RSpec.describe UsersController, type: :controller do
     
     describe "#create" do
         context "有効なユーザーで登録" do
-            # before do
-            #     post :create, params: { user: { name: "tatsuro", email: "tatsuro@example.com", password: "password"} } 
-            # end
+            it "302レスポンスが返ってくる" do
+                post :create, params: { user: { name: "tatsuro", email: "tatsuro@example.com", password: "password"} } 
+                expect(response).to have_http_status "302"
+            end
+            
             it "usersテーブルのレコード数が１つ増える" do
                 expect{ 
                     post :create, params: { user: { name: "tatsuro", email: "tatsuro@example.com", password: "password"} } 
                 }.to change{ User.count }.by(1)
             end
-            
-            # it "ログインしているか" do
-            #     post :create, params: { user: { name: "tatsuro", email: "tatsuro@example.com", password: "password"} } 
-            #     include SessionsHelper
-            #     expect(User.find_by(email: "tatsuro@example.com").logged_in?).to eq true
-            # end
-            
+
             it "ユーザー詳細画面にリダイレクトする" do
                 post :create, params: { user: { name: "tatsuro", email: "tatsuro@example.com", password: "password"} } 
                 expect(response).to redirect_to User.find_by(email: "tatsuro@example.com")
@@ -78,69 +72,73 @@ RSpec.describe UsersController, type: :controller do
         end
         
         context "ログインしていないユーザーの時" do
-            it "正常なレスポンスが返ってこない" do
-                # get :index, params: { page: 1 }
-                # expect(response).to_not be_success
+            it "200レスポンスが返ってこない" do
+                get :index, params: { page: 1 }
+                expect(response.status).to_not eq 200
             end
             
             it "302レスポンスが返ってくる" do
-                
+                get :index, params: { page: 1 }
+                expect(response.status).to eq 302
             end
         end
     end
     
     describe  "#edit" do
-        context "ログインしているユーザーの時" do
-            it "正常なレスポンスが返ってくる" do
-           
-            end
-        
-            it "200レスポンスが返ってくる" do
+        before do
+            @user = FactoryBot.create(:user)
+        end
             
+        context "ログインしているユーザーの時" do
+            it "200レスポンスが返ってくる" do
+                log_in(@user)
+                get :edit, params: { id: @user.id }
+                expect(response.status).to eq 200
             end
         end
         
         context "ログインしていないユーザーの時" do
-            it "正常なレスポンスが返ってこない" do
-                
+            it "200レスポンスが返ってこない" do
+                get :edit, params: { id: @user.id }
+                expect(response.status).to_not eq 200
             end
             
             it "302レスポンスが返ってくる" do
-                
+                get :edit, params: { id: @user.id }
+                expect(response.status).to eq 302
             end
         end
     end
     
     describe  "#update" do
-        context "ログインしているユーザーの時" do
-            it "正常なレスポンスが返ってくる" do
-           
-            end
+        before do
+            @user = FactoryBot.create(:user)
+        end
         
-            it "200レスポンスが返ってくる" do
-            
-            end
-            
+        context "ログインしているユーザーの時" do
             it "ユーザーを更新できる" do
-                
+                log_in(@user)
+                patch :update, params: { id: @user.id, user: { name: "maru" } }
+                expect(@user.reload.name).to eq "maru"
             end
             
             it "ユーザー詳細画面にリダイレクトする" do
-                
+                log_in(@user)
+                patch :update, params: { id: @user.id, user: { name: "maru" } }
+                expect(response).to redirect_to @user
             end
         end
         
         context "ログインしていないユーザーの時" do
-            it "正常なレスポンスが返ってこない" do
-                
+            it "200レスポンスが返ってこない" do
+                get :update, params: { id: @user.id }
+                expect(response.status).to_not eq 200
             end
             
             it "302レスポンスが返ってくる" do
-                
+                get :update, params: { id: @user.id }
+                expect(response.status).to eq 302
             end
         end
     end
-    
-    
-    
 end
