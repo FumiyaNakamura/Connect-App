@@ -22,3 +22,5 @@
 <span>
     <%= time_ago_in_words(post.created_at) %>前に作成
 </span>
+<%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %>
+<br>

@@ -11,6 +11,10 @@ class User < ApplicationRecord
     has_secure_password
     mount_uploader :image, ImageUploader
     
+    def feed
+      Post.where("user_id = ?", id)
+    end
+    
     private
     
       def image_size

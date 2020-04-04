@@ -1,5 +1,10 @@
 <% if logged_in? %>
-  <%= render "layouts/help" %>
+  <%= render "shared/user_info" %>
+  <%= render "shared/post_form" %>
+  <div>
+    <h3>タイムライン</h3>
+    <%= render "shared/feed" %>
+  </div>
 <% else %>
   <h1>Connect</h1>
   <p>今日やることを投稿してみよう</p>

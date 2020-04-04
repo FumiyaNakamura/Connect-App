@@ -34,7 +34,7 @@ RSpec.describe UsersController, type: :controller do
             end
         end
         
-        context "無効なメールアドレスで登録しようとする時" do
+        context "無効なメールアドレスで登録" do
             it "ユーザー登録画面にレンダリングする" do
                 post :create, params: { user: { name: "tatsuro", email: "aaaa", password: "password"} } 
                 expect(response).to render_template("new")

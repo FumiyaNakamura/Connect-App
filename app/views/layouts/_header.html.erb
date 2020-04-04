@@ -3,6 +3,7 @@
     <nav>
       <ul>
         <%= link_to "Connect", root_path  %>
+        <%= link_to "サイト説明", help_path %>
         <% if logged_in? %>
           <%= link_to "ユーザー一覧", users_path %>
           <li class="dropdown">
@@ -19,7 +20,6 @@
             </ul>
           </li>
         <% else %>
-          <%= link_to "サイト説明", help_path %>
           <%= link_to "ログイン", login_path %>
         <% end %>
       </ul>
