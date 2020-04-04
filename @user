@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/ec2-user/environment/connect_app/app/views/users/show.html.erb:12 ActionView::CompiledTemplates#_app_views_users_show_html_erb___2512777334125504038_69957942777200:
+
+     [1;34m7[0m:     <% end %>
+     [1;34m8[0m:     <%= @user.name %>
+     [1;34m9[0m: </h1>
+    [1;34m10[0m: 
+    [1;34m11[0m: <div>
+ => [1;34m12[0m:   <% binding.pry %>
+    [1;34m13[0m:   <% if @user.posts.any? %>
+    [1;34m14[0m:     <%= render @posts %>
+    [1;34m15[0m:     <%= will_paginate @posts %>
+    [1;34m16[0m:   <% end %>
+    [1;34m17[0m: </div>
+

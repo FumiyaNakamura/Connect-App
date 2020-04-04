@@ -1,0 +1,24 @@
+<% if @user.image? %>
+    <%= image_tag @user.image.url %>
+<% else %>
+    <%= image_tag "default.jpg", :size =>'50x50' %>
+<% end %>
+
+<span>
+    <%= link_to post.user.name, post.user %>
+</span>
+<span>
+    <%= post.title %>
+</span>
+<span>
+    <%= post.content %>
+</span>
+<span>
+    <% if post.image.file.nil? %>
+    <% else %> 
+        <%= post.image %>
+    <% end %>
+</span>
+<span>
+    <%= time_ago_in_words(post.created_at) %>前に作成
+</span>

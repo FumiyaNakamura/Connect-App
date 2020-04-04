@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe Post, type: :model do
     before do
         @user = FactoryBot.create(:user)
-        @post = @user.posts.build(title: "プログラミング学習", content: "今日はRspecについて学ぶ！")
+        @post = FactoryBot.build(:post)
     end
     
     context "バリデーションがOK" do
@@ -45,6 +45,13 @@ RSpec.describe Post, type: :model do
             @post.content = "a" * 301
             expect(@post).to_not be_valid
         end
+    end
         
+    context "postsテーブル" do
+        it "作成日時の降順になっているか" do
+            @post_old = @user.posts.create(title: "古い",content: "古い")
+            @post_new = @user.posts.create(title: "新しい",content: "新しい")
+            expect(@user.posts.first.title).to eq "新しい" 
+        end
     end
 end
