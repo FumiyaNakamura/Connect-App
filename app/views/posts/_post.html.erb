@@ -3,24 +3,28 @@
 <% else %>
     <%= image_tag "default.jpg", :size =>'50x50' %>
 <% end %>
-
 <span>
     <%= link_to post.user.name, post.user %>
 </span>
+
+<br>
+
 <span>
-    <%= post.title %>
+    <%= post.title %><br>
 </span>
 <span>
-    <%= post.content %>
+    <%= post.content %><br>
 </span>
 <span>
     <% if post.image.file.nil? %>
     <% else %> 
         <%= image_tag post.image.url %>
     <% end %>
+    <br>
 </span>
 <span>
     <%= time_ago_in_words(post.created_at) %>前に作成
+    <br>
 </span>
 <%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %>
 <br>

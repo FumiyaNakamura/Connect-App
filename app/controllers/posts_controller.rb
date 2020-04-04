@@ -8,6 +8,7 @@ class PostsController < ApplicationController
             flash[:success] = "投稿しました"
             redirect_to root_url
         else
+            flash.now[:danger] = "タイトルと内容は必須です"
             @user = current_user
             @feed_items = @user.feed.paginate(page: params[:page])
             render "static_pages/home"

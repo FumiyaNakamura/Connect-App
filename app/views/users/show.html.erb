@@ -1,7 +1,7 @@
 <h1>マイページ</h1>
 <h1>
     <% if @user.image? %>
-      <%= image_tag @user.image.url %>
+      <%= image_tag @user.image.url, :size =>'100x100'  %>
     <% else %>
       <%= image_tag "default.jpg", :size =>'100x100' %>
     <% end %>
