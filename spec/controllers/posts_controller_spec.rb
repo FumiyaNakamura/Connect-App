@@ -37,6 +37,18 @@ RSpec.describe PostsController, type: :controller do
         end
     end
     
+    describe "#destroy" do
+        before do
+            log_in(@user)
+            post :create, params: { post: { title: "数学",content: "3時間やった！" } } 
+        end
+        
+        it "投稿の削除" do
+            expect{
+                delete :destroy, params: { id: 1 }
+            }.to change{ @user.posts.count }.by(-1)
+        end
+    end
 
 
 end

@@ -9,5 +9,8 @@
         <%= f.text_area :content  %><br>
     </div>
     <%= f.submit "投稿する", class: "btn btn-default" %>
+    <span>
+        <%= f.file_field :image %>
+    </span>
 <% end %>
     

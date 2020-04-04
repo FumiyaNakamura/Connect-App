@@ -16,7 +16,7 @@
 <span>
     <% if post.image.file.nil? %>
     <% else %> 
-        <%= post.image %>
+        <%= image_tag post.image.url %>
     <% end %>
 </span>
 <span>
