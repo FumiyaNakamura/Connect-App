@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   resources :users
   resources :posts, only: [:create, :destroy]
+  resources :account_activations, only: [:edit]
 end
