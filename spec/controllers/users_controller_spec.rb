@@ -28,10 +28,10 @@ RSpec.describe UsersController, type: :controller do
                 }.to change{ User.count }.by(1)
             end
 
-            # it "ユーザー詳細画面にリダイレクトする" do
-            #     post :create, params: { user: { name: "tatsuro", email: "tatsuro@example.com", password: "password"} } 
-            #     expect(response).to redirect_to User.find_by(email: "tatsuro@example.com")
-            # end
+            it "ホーム画面にリダイレクトする" do
+                post :create, params: { user: { name: "tatsuro", email: "tatsuro@example.com", password: "password"} } 
+                expect(response).to redirect_to root_url
+            end
         end
         
         context "無効なメールアドレスで登録" do
