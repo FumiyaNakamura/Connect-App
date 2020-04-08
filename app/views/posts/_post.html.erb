@@ -26,5 +26,17 @@
     <%= time_ago_in_words(post.created_at) %>前に作成
     <br>
 </span>
-<%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %>
+<span>
+    <% if post.favorited_by?(current_user) %>
+        <%= link_to "いいねを消す:", post_favorites_path(post.id), method: :delete %>
+        <%= post.favorites.count %>
+    <% else %>
+        <%= link_to "いいねする:", post_favorites_path(post.id), method: :post %>
+        <%= post.favorites.count %>
+    <% end %>
+</span>
+
+<% if current_user?(post.user) %>
+    <%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %>
+<% end %>
 <br>
