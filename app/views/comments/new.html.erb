@@ -1,0 +1,49 @@
+<% if @post.user.image? %>
+    <%= image_tag @post.user.image.url %>
+<% else %>
+    <%= image_tag "default.jpg", :size =>'50x50' %>
+<% end %>
+<span>
+    <%= @post.user.name %>
+</span>
+
+<br>
+
+<span>
+    <%= @post.title %><br>
+</span>
+<span>
+    <%= @post.content %><br>
+</span>
+<span>
+    <% if @post.image.file.nil? %>
+    <% else %> 
+        <%= image_tag @post.image.url %>
+    <% end %>
+    <br>
+</span>
+
+<span>
+    <% if @post.comments.any? %>
+        <% @post.comments.each do |comment| %>
+            <% if comment.user.image? %>
+                <%= image_tag comment.user.image.url %>
+            <% else %>
+                <%= image_tag "default.jpg", :size =>'50x50' %>
+            <% end %>
+            <%= comment.user.name %><br>
+            <%= comment.content %><br>
+            <%= time_ago_in_words(comment.created_at) %>前に作成<br>
+            <% if current_user?(comment.user) %>
+                <%= link_to "削除", post_comments_path(comment.post), method: :delete, data: { confirm: "本当に消しますか？" } %><br>
+            <% end %>
+        <% end %>
+    <% end %>
+</span>
+
+<%= form_for([@post, @comment]) do |f| %>
+    <%= f.label :コメント  %><br>
+    <%= f.text_area :content  %><br>
+    
+    <%= f.submit "コメントする", class: "btn btn-default" %>
+<% end %>

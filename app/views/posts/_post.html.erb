@@ -36,6 +36,8 @@
     <% end %>
 </span>
 
+<%= link_to "コメントする", new_post_comments_path(post.id)  %>
+
 <% if current_user?(post.user) %>
     <%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %>
 <% end %>
