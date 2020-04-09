@@ -10,12 +10,11 @@ class CommentsController < ApplicationController
     comment.post_id = @post.id
     comment.save
     flash[:success] = "コメントしました"
-    redirect_to request.referer
+    redirect_to request.referer || root_url
   end
 
   def destroy
     comment = Comment.find_by(post_id: params[:post_id], user_id: current_user.id)
-    binding.pry
     comment.destroy
     flash[:success] = "コメントを削除しました"
     redirect_to request.referer || root_url
