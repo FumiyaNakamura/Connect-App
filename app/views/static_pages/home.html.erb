@@ -3,8 +3,53 @@
   <%= render "shared/post_form" %>
   <div>
     <h3>タイムライン</h3>
-    <%= render "shared/feed" %>
-  </div>
+    <% @feed_items.each do |post| %>
+      <% if post.user.image? %>
+          <%= image_tag post.user.image.url %>
+      <% else %>
+          <%= image_tag "default.jpg", :size =>'50x50' %>
+      <% end %>
+      <span>
+          <%= link_to post.user.name, post.user %>
+      </span>
+      
+      <br>
+      
+      <span>
+          <%= post.title %><br>
+      </span>
+      <span>
+          <%= post.content %><br>
+      </span>
+      <span>
+          <% if post.image.file.nil? %>
+          <% else %> 
+              <%= image_tag post.image.url %>
+          <% end %>
+          <br>
+      </span>
+      <span>
+          <%= time_ago_in_words(post.created_at) %>前に作成
+          <br>
+      </span>
+      <span>
+          <% if post.favorited_by?(current_user) %>
+              <%= link_to "いいねを消す:", post_favorites_path(post.id), method: :delete %>
+              <%= post.favorites.count %>
+          <% else %>
+              <%= link_to "いいねする:", post_favorites_path(post.id), method: :post %>
+              <%= post.favorites.count %>
+          <% end %>
+      </span>
+      
+      <%= link_to "コメントする", new_post_comments_path(post.id)  %>
+      
+      <% if current_user?(post.user) %>
+          <%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %>
+      <% end %>
+      <br>
+    </div>
+  <% end %>
 <% else %>
   <h1>Connect</h1>
   <p>今日やることを投稿してみよう</p>
