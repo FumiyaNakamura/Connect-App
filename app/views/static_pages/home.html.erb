@@ -21,16 +21,12 @@
         <div class="panel-heading"><%= post.title %></div>
         <div class="panel-body">
           <p><%= post.content %></p>
-        </div>
-        <div class="panel-body">
           <p>
             <% if post.image.file.nil? %>
             <% else %> 
                 <%= image_tag post.image.url %>
             <% end %>
           </p>
-        </div>
-        <div class="panel-body">
           <span>
             <%= time_ago_in_words(post.created_at) %>前に作成
             <br>

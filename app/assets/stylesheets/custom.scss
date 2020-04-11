@@ -23,15 +23,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-/* 要素を区切る */
-hr {
-    box-sizing: content-box;
-    height: 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #eee;
-}
 
 /* トップページ */
 .home {
@@ -56,6 +47,8 @@ hr {
   z-index: -1;
 }
 
+/* その他 */
+
 .text_against_picture{
   text-shadow: 0 0 10px #333;
   color: #ffffff;
@@ -67,4 +60,22 @@ hr {
 
 .position{
   position: fixed;
+}
+
+.discription-container {
+  margin: 3rem 0;
+  padding: 3rem 1rem;
+  h2 {
+  text-align: center;
+  }
+}
+
+.discription-img-container {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.discription-img {
+  width: 12rem;
+  border-radius: 0.1rem;
 }
