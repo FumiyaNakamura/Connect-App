@@ -39,20 +39,30 @@
           <% else %>
               <%= link_to "いいねする:", post_favorites_path(post.id), method: :post %>
               <%= post.favorites.count %>
-          <% end %>
+          <% end %><br>
       </span>
       
-      <%= link_to "コメントする", new_post_comments_path(post.id)  %>
+      <%= link_to "コメントする", new_post_comments_path(post.id)  %><br>
       
       <% if current_user?(post.user) %>
           <%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %>
-      <% end %>
+      <% end %><br>
       <br>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 <% else %>
-  <h1>Connect</h1>
-  <p>今日やることを投稿してみよう</p>
-　<%= link_to "新規登録", signup_path, class: "btn btn-default" %><br>
-　<%= link_to "ログイン", login_path, class: "btn btn-default" %>
+<div class = "home">
+  <ul class="text_against_picture">
+    <h1>Let's post.</h1>
+    <p>Connectは、日々の頑張りを共有してモチベーションを上げるサービスです。</p>
+    <p>今日の取組みや成果について投稿することで、あなたの頑張りを共有できます。</p>
+    <p>他の方の「頑張り」にコメントをしたり、いいねを送ることができます。</p>
+    <p>さっそく投稿をしてモチベーションを上げてみましょう！</p>
+  </ul>
+  <br><br><br><br>
+  <ul class="row">
+    <%= link_to "新規登録", signup_path, class: "btn btn-danger col-md-2 col-md-offset-5" %><br><br>
+    <%= link_to "ログイン", login_path, class: "btn btn-default col-md-2 col-md-offset-5" %>
+  </ul>
+</div>
 <% end %>
