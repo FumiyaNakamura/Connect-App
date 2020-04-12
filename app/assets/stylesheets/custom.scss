@@ -94,6 +94,10 @@ textarea {
 }
 
 /*  ボタンの幅 */
+.w-25 {
+  width: 25%;
+}
+
 input[type="text"] {
         width: 1000px;
         height: 40px;
@@ -140,7 +144,7 @@ input[type="submit"] {
   width: 360px;
 }
 
-.under-resetting-password {
+.underline-resetting-password {
   border-bottom: double 6px #ff7f50;
   width: 330px;
 }
@@ -162,10 +166,6 @@ input[type="submit"] {
 }
 
 /*  投稿の幅 */
-// .w-75 {
-//   width: 75%;
-// }
-
 .post-width {
   width: 88%;
 }
@@ -201,4 +201,16 @@ input[type="submit"] {
 
 .mt-70px {
   margin: 70px 0 0 0;
+}
+
+.mt-80px {
+  margin: 80px 0 0 0;
+}
+
+.mt-90px {
+  margin: 90px 0 0 0;
+}
+
+.mt-100px {
+  margin: 100px 0 0 0;
 }

@@ -4,15 +4,9 @@
     <%= render "shared/user_info" %>
     <%= render "shared/post_form" %>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <div>
+  <div class="mt-100px">
     <div>
       <h3 class="underline-timeline col-md-offset-5">タイムライン</h3>
-      <br>
     </div>
     <% @feed_items.each do |post| %>
       <% if post.user.image? %>
@@ -20,27 +14,19 @@
       <% else %>
           <%= image_tag "default.jpg", :size =>'50x50' %>
       <% end %>
-      <span>
-          <%= link_to post.user.name, post.user %>
-      </span>
-      <br>
+      <%= link_to post.user.name, post.user %>
       <div class="panel panel-default">
         <div class="panel-heading">
           <%= post.title %>
         </div>
         <div class="panel-body">
           <p><%= post.content %></p>
-          <p>
           <% if post.image.file.nil? %>
           <% else %> 
             <%= image_tag post.image.url %>
           <% end %>
-          </p>
-          <span>
-            <%= time_ago_in_words(post.created_at) %>前に作成
-            <br>
-          </span>
-          <span>
+          <p><%= time_ago_in_words(post.created_at) %>前に作成</p>
+          <p>
             <% if post.favorited_by?(current_user) %>
               <%= link_to "いいねを消す:", post_favorites_path(post.id), method: :delete %>
               <%= post.favorites.count %>
@@ -48,10 +34,8 @@
               <%= link_to "いいねする:", post_favorites_path(post.id), method: :post %>
               <%= post.favorites.count %>
             <% end %>
-            <br>
-          </span>
-          <%= link_to "コメントする", new_post_comments_path(post.id)  %>
-          <br>
+          </p>
+          <p><%= link_to "コメントする", new_post_comments_path(post.id) %></p>
           <% if current_user?(post.user) %>
             <%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %>
           <% end %>
@@ -69,13 +53,10 @@
     <p>他の方の「頑張り」にコメントをしたり、いいねを送ることができます。</p>
     <p>さっそく投稿をしてモチベーションを上げてみましょう！</p>
   </ul>
-  <br><br><br><br>
-  <ul class="row">
-    <%= link_to "新規登録", signup_path, class: "btn btn-danger col-md-2 col-md-offset-5 btn-lg" %>
-    <br><br><br>
-    <%= link_to "ログイン", login_path, class: "btn btn-default col-md-2 col-md-offset-5 btn-lg" %>
-    <br><br><br>
-    <%= link_to "ゲストユーザー", guest_path, method: :post, class: "btn btn-info col-md-2 col-md-offset-5 btn-lg" %>
-  </ul>
+  <div class="mt-100px">
+    <p><%= link_to "新規登録", signup_path, class: "btn btn-danger col-md-offset-5 btn-lg w-25" %></p>
+    <p><%= link_to "ログイン", login_path, class: "btn btn-default col-md-offset-5 btn-lg w-25" %></p>
+    <p><%= link_to "ゲストユーザー", guest_path, method: :post, class: "btn btn-info col-md-offset-5 btn-lg w-25" %></p>
+  </div>
 </div>
 <% end %>

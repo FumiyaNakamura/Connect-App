@@ -1,6 +1,5 @@
 <div class="row">
   <h1 class="underline-mypage col-md-offset-5">マイページ</h1>
-  <br>
 </div>
 <div class="row">
   <h1 class="col-sm-4">
@@ -11,9 +10,7 @@
       <% end %>
       <%= @user.name %>
   </h1>
-  
-  <div class="col-sm-8">
-    <br><br>
+  <div class="col-sm-8 mt-30px">
     <% if @user.posts.any? %>
       <%= render @posts %>
       <%= will_paginate @posts %>

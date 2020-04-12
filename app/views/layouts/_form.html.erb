@@ -2,26 +2,22 @@
   <div class="col-md-14 col-md-offset-1">
     <%= form_for(@user, url: yield(:url)) do |f|  %>
       <%= render "shared/error_messages", object: f.object %>
-      <%= f.label :名前  %>
-      <br>
-      <%= f.text_field :name, class: 'form-control'  %>
-      <br>
-      <%= f.label :メールアドレス %>
-      <br>
-      <%= f.email_field :email, class: 'form-control'  %>
-      <br>
-      <%= f.label :パスワード %><br>
-      <%= f.password_field :password, class: 'form-control'  %>
-      <br>
-      <%= f.label :パスワード確認 %>
-      <br>
-      <%= f.password_field :password_confirmation, class: 'form-control'  %>
-      <br>
+      <p><%= f.label :名前  %></p>
+      <p><%= f.text_field :name, class: 'form-control'  %></p>
+      
+      <p><%= f.label :メールアドレス %></p>
+      <p><%= f.email_field :email, class: 'form-control'  %></p>
+      
+      <p><%= f.label :パスワード %></p>
+      <p><%= f.password_field :password, class: 'form-control'  %></p>
+      
+      <p><%= f.label :パスワード確認 %></p>
+      <p><%= f.password_field :password_confirmation, class: 'form-control'  %></p>
+      
       <%= f.label :アイコン画像 %>
-      <br>
-      <%= f.file_field :image, accept: "image/jpg,image/gif,image/png" %>
-      <br>
-      <%= f.submit yield(:button_text), class: "btn btn-danger" %>
+      <p><%= f.file_field :image, accept: "image/jpg,image/gif,image/png" %></p>
+      
+      <p><%= f.submit yield(:button_text), class: "btn btn-danger mt-10px" %></p>
     <% end %>
   </div>
 </div>

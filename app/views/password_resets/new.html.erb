@@ -1,22 +1,12 @@
 <div class="row">
-  <h1 class="underline-forgot-password col-md-offset-4">パスワードを忘れた方</h1>
-  <br>
+  <h1 class="underline-forgot-password col-md-offset-3">パスワードを忘れた方</h1>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <div>
-  <div>
+  <div class="mt-70px">
     <%= form_for(:password_reset, url: password_resets_path) do |f| %>
-      <%= f.label :メールアドレス %>
-      <br>
-      <%= f.email_field :email %>
-      <br>
-      <br>
-      <%= f.submit "送信", class: "btn btn-info" %>
+      <p><%= f.label :メールアドレス %></p>
+      <p><%= f.email_field :email %></p>
+      <p><%= f.submit "送信", class: "btn btn-info mt-30px" %></p>
     <% end %>
   </div>
 </div>

@@ -4,7 +4,6 @@
     <%= image_tag "default.jpg", :size =>'50x50' %>
 <% end %>
 <%= link_to post.user.name, post.user %>
-<br>
 <div class="panel panel-default">
     <div class="panel-heading">
         <%= post.title %>
@@ -16,13 +15,9 @@
             <% else %> 
                 <%= image_tag post.image.url %>
             <% end %>
-            <br>
         </span>
-        <span>
-            <%= time_ago_in_words(post.created_at) %>前に作成
-            <br>
-        </span>
-        <span>
+        <p><%= time_ago_in_words(post.created_at) %>前に作成</p>
+        <p>
             <% if post.favorited_by?(current_user) %>
                 <%= link_to "いいねを消す:", post_favorites_path(post.id), method: :delete %>
                 <%= post.favorites.count %>
@@ -30,12 +25,10 @@
                 <%= link_to "いいねする:", post_favorites_path(post.id), method: :post %>
                 <%= post.favorites.count %>
             <% end %>
-            <br>
-        </span>
-        <%= link_to "コメントする", new_post_comments_path(post.id)  %>
-        <br>
+        </p>
+        <p><%= link_to "コメントする", new_post_comments_path(post.id) %></p>
         <% if current_user?(post.user) %>
-            <%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %>
+            <p><%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %></p>
         <% end %>
      </div>
 </div>

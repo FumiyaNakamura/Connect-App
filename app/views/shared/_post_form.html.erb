@@ -1,23 +1,14 @@
 <%= form_for(@post) do |f| %>
     <% render "shared/error_messages", object: f.object %>
-    <div>
-        <%= f.label :タイトル  %>
-        <br>
-        <%= f.text_field :title  %>
-        <br>
-    </div>
-    <div>
-        <%= f.label :内容  %>
-        <br>
-        <%= f.text_field :content  %>
-        <br>
-        <br>
-    </div>
-    <span>
-        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
-        <br>
-    </span>
-    <%= f.submit "投稿する", class: "btn btn-info", id: "initial" %>
+    <p><%= f.label :タイトル  %></p>
+    <p><%= f.text_field :title  %></p>
+    
+    <p><%= f.label :内容  %></p>
+    <p><%= f.text_field :content  %></p>
+    
+    <p><%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %></p>
+    
+    <p><%= f.submit "投稿する", class: "btn btn-info", id: "initial" %></p>
 <% end %>
     
 <script type="text/javascript">
