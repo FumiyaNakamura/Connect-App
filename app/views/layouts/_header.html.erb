@@ -16,7 +16,10 @@
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to "マイページ", current_user %></li>
-                <li><%= link_to "ユーザー編集", edit_user_path(current_user) %></li>
+                <% if guest_user? %>
+                <% else %>
+                  <li><%= link_to "ユーザー編集", edit_user_path(current_user) %></li>
+                <% end %>
                 <li class="divider"></li>
                 <li>
                   <%= link_to "ログアウト", logout_path, method: :delete %>
