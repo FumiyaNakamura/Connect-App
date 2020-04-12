@@ -1,6 +1,12 @@
-<% if object.errors.any? %>
-  このフォームには<%= object.errors.count %>つの誤りがあります<br>
-  <% object.errors.full_messages.each do |msg| %>
-    <%= msg %><br>
+<div id="error_explanation">
+  <% if object.errors.any? %>
+  <div class="alert alert-danger">
+    このフォームには<%= object.errors.count %>つの誤りがあります<br>
+  </div>
+    <ul>
+      <% object.errors.full_messages.each do |msg| %>
+        <%= msg %><br>
+      <% end %>
+    </ul>
   <% end %>
-<% end %>
+</div>

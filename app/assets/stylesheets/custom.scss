@@ -155,9 +155,19 @@ input[type="submit"] {
   width: 330px;
 }
 
-// .under-mypost {
-//   border-bottom: double 6px #ff7f50;
-//   width: 125px;
-// }
+/* フォーム */
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
 
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
 
