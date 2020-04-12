@@ -3,7 +3,6 @@
   <head>
     <title>ConnectApp</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--[if lt IE 9]>
@@ -11,7 +10,6 @@
       </script>
     <![endif]-->
   </head>
-
   <body>
     <div class="container">
       <% flash.each do |message_type, message| %>

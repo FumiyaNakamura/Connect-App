@@ -4,11 +4,14 @@
     <%= render "shared/user_info" %>
     <%= render "shared/post_form" %>
   </div>
-  <br><br><br><br>
+  <br>
+  <br>
+  <br>
+  <br>
 
   <div>
     <div>
-      <h3 class="under-timeline col-md-offset-5">タイムライン</h3>
+      <h3 class="underline-timeline col-md-offset-5">タイムライン</h3>
       <br>
     </div>
     <% @feed_items.each do |post| %>
@@ -58,8 +61,8 @@
   </div>
 </div>
 <% else %>
-<div class = "home">
-  <ul class="text_against_picture">
+<div class = "home-background-image">
+  <ul class="text_against_image">
     <h1>Let's post.</h1>
     <p>Connectは、日々の頑張りを共有してモチベーションを上げるサービスです。</p>
     <p>今日の取組みや成果について投稿することで、あなたの頑張りを共有できます。</p>

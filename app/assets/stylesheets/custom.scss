@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* universal */
+/* 共通 */
 
 body {
   padding-top: 60px;
@@ -24,8 +24,8 @@ textarea {
 }
 
 
-/* トップページ */
-.home {
+/* トップページの背景画像 */
+.home-background-image {
   background-image: url(home.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -35,7 +35,7 @@ textarea {
   z-index: 0;
 }
 
-.home::before {
+.home-background-image::before {
   content: '';
   position: absolute;
   top: -5px;
@@ -43,12 +43,11 @@ textarea {
   left: -5px;
   right: -5px;
   background: inherit;
-  // filter: blur(5px);
   z-index: -1;
 }
 
-/* サイト説明 */
-.help {
+/* サイト説明の背景画像 */
+.help-background-image {
   background-image: url(water.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -58,7 +57,7 @@ textarea {
   z-index: 0;
 }
 
-.help::before {
+.help-background-image::before {
   content: '';
   position: absolute;
   top: -5px;
@@ -66,23 +65,14 @@ textarea {
   left: -5px;
   right: -5px;
   background: inherit;
-  // filter: blur(5px);
   z-index: -1;
 }
 
-/* その他 */
+/* 文字の加工 */
 
-.text_against_picture{
+.text_against_image{
   text-shadow: 0 0 10px #333;
   color: #ffffff;
-}
-
-.margin {
-  margin: 5px;
-}
-
-.position{
-  position: fixed;
 }
 
 .discription-container {
@@ -130,27 +120,27 @@ input[type="submit"] {
     }
     
 /*  下線 */
-.under {
+.underline-common {
   border-bottom: double 6px #ff7f50;
   width: 230px;
 }
 
-.under-timeline {
+.underline-timeline {
   border-bottom: double 6px #ff7f50;
   width: 150px;
 }
 
-.under-mypage {
+.underline-mypage {
   border-bottom: double 6px #ff7f50;
   width: 180px;
 }
 
-.under-password {
+.underline-forgot-password {
   border-bottom: double 6px #ff7f50;
   width: 360px;
 }
 
-.under-password-2 {
+.under-resetting-password {
   border-bottom: double 6px #ff7f50;
   width: 330px;
 }
@@ -171,3 +161,44 @@ input[type="submit"] {
   }
 }
 
+/*  投稿の幅 */
+// .w-75 {
+//   width: 75%;
+// }
+
+.post-width {
+  width: 88%;
+}
+
+/*  マージン */
+.margin {
+  margin: 5px 0 0 0;
+}
+
+.mt-10px {
+  margin: 10px 0 0 0;
+}
+
+.mt-20px {
+  margin: 20px 0 0 0;
+}
+
+.mt-30px {
+  margin: 30px 0 0 0;
+}
+
+.mt-40px {
+  margin: 40px 0 0 0;
+}
+
+.mt-50px {
+  margin: 50px 0 0 0;
+}
+
+.mt-60px {
+  margin: 60px 0 0 0;
+}
+
+.mt-70px {
+  margin: 70px 0 0 0;
+}

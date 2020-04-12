@@ -5,7 +5,7 @@
         <%= image_tag "default.jpg", :size =>"50x50" %>
     <% end %>
     <%= @post.user.name %>
-    <div class="panel panel-default post-width">
+    <div class="panel panel-default">
         <div class="panel-heading">
             <%= @post.title %>
         </div>
@@ -27,22 +27,24 @@
                 <%= image_tag "default.jpg", :size =>"50x50" %>
             <% end %>
             <%= comment.user.name %>
-            <div class="panel panel-default post-width">
-                <div class="panel-body">
-                    <p><%= comment.content %></p>
-                    <p><%= time_ago_in_words(comment.created_at) %>前に作成</p>
-                    <% if current_user?(comment.user) %>
-                        <p><%= link_to "削除", post_comments_path(comment.post), method: :delete, data: { confirm: "本当に消しますか？" } %></p>
-                    <% end %>
-                </div>
-            </div>
+            
+            
+            
+            <p><%= comment.content %></p>
+            
+            <%= time_ago_in_words(comment.created_at) %>前に作成
+            <br>
+            <% if current_user?(comment.user) %>
+                <%= link_to "削除", post_comments_path(comment.post), method: :delete, data: { confirm: "本当に消しますか？" } %>
+                <br>
+            <% end %>
         <% end %>
     <% end %>
 </div>
 <div>
     <%= form_for([@post, @comment]) do |f| %>
-        <p><%= f.label :コメント, class: "mt-50px" %></p>
-        <p><%= f.text_field :content %></p>
+        <p><%= f.label :コメント, class: "mt-70px" %></p>
+        <p><%= f.text_field :content , class: "mt-10px" %></p>
         <p><%= f.submit "コメントする", class: "btn btn-info mt-10px" %></p>
     <% end %>
 </div>
