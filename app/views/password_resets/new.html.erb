@@ -6,8 +6,8 @@
 <div>
   <div>
     <%= form_for(:password_reset, url: password_resets_path) do |f| %>
-      <%= f.label :メールアドレス %>
-      <%= f.email_field :email %><br>
+      <%= f.label :メールアドレス %><br>
+      <%= f.email_field :email %><br><br>
 
       <%= f.submit "送信", class: "btn btn-info" %>
     <% end %>
