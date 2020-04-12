@@ -25,15 +25,18 @@ Connect（URL:[https://connectappfumiya.herokuapp.com/）](https://connectappfum
 * いいね機能
 
 ## 使用技術一覧
-*言語
+* 言語
     * Ruby(2.6.3)
-*フレームワーク
+* フレームワーク
     * Ruby on Rails（5.1.6）
 * RDB
     * PostgreSQL
 * 開発環境
-    * Mac 
-    * AWScloud9
+    * MacOS
+* バージョン管理
+    * Git 
 * 本番環境
     * Heroku
+
+
 
