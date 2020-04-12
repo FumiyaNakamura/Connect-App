@@ -1,5 +1,5 @@
 <% if @post.user.image? %>
-    <%= image_tag @post.user.image.url %>
+    <%= image_tag @post.user.image.url, :size =>'100x100' %>
 <% else %>
     <%= image_tag "default.jpg", :size =>'100x100' %>
 <% end %>
