@@ -1,9 +1,12 @@
 <% provide(:url, user_path(@user)) %>
 <% provide(:button_text, "変更を保存する") %>
 
-<h1>ユーザー編集</h1>
+<div class="row">
+  <h1 class="under col-md-offset-5">ユーザー編集</h1>
+  <br>
+</div>
 
-<h1>
+<h1 class="col-md-offset-5">
     <% if @user.image? %>
         <%= image_tag @user.image.url, :size =>'100x100'  %>
     <% else %>

@@ -1,4 +1,9 @@
-<h1>パスワードの再設定</h1>
+<div class="row">
+  <h1 class="under-password-2 col-md-offset-4">パスワードの再設定</h1>
+  <br>
+</div>
+
+<!--<h1>パスワードの再設定</h1>-->
 
 <div>
     <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
@@ -7,11 +12,11 @@
       <%= hidden_field_tag :email, @user.email %>
 
       <%= f.label :パスワード %><br>
-      <%= f.password_field :password%><br>
+      <%= f.password_field :password%><br><br>
 
       <%= f.label :パスワード（確認） %><br>
-      <%= f.password_field :password_confirmation %><br>
+      <%= f.password_field :password_confirmation %><br><br>
 
-      <%= f.submit "パスワードを更新する" %>
+      <%= f.submit "パスワードを更新する", class: "btn btn-info" %>
     <% end %>
 </div>

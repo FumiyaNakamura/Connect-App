@@ -1,4 +1,7 @@
-<h1>マイページ</h1>
+<div class="row">
+  <h1 class="under-mypage col-md-offset-5">マイページ</h1>
+  <br>
+</div>
 <div class="row">
   <h1 class="col-sm-4">
       <% if @user.image? %>
@@ -10,6 +13,7 @@
   </h1>
   
   <div class="col-sm-8">
+    <br><br>
     <% if @user.posts.any? %>
       <%= render @posts %>
       <%= will_paginate @posts %>

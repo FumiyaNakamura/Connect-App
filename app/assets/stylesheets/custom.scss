@@ -47,6 +47,29 @@ textarea {
   z-index: -1;
 }
 
+/* サイト説明 */
+.help {
+  background-image: url(water.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  z-index: 0;
+}
+
+.help::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: inherit;
+  // filter: blur(5px);
+  z-index: -1;
+}
+
 /* その他 */
 
 .text_against_picture{
@@ -79,3 +102,60 @@ textarea {
   width: 12rem;
   border-radius: 0.1rem;
 }
+
+/*  ボタンの幅 */
+input[type="text"] {
+        width: 1000px;
+        height: 40px;
+    }
+    
+input[type="text_area"] {
+        width: 1000px;
+        height: 40px;
+    }
+
+input[type="email"] {
+        width: 1000px;
+        height: 40px;
+    }
+
+input[type="password"] {
+        width: 1000px;
+        height: 40px;
+    }
+    
+input[type="submit"] {
+        width: 1000px;
+        height: 40px;
+    }
+    
+/*  下線 */
+.under {
+  border-bottom: double 6px #ff7f50;
+  width: 230px;
+}
+
+.under-timeline {
+  border-bottom: double 6px #ff7f50;
+  width: 150px;
+}
+
+.under-mypage {
+  border-bottom: double 6px #ff7f50;
+  width: 180px;
+}
+
+.under-password {
+  border-bottom: double 6px #ff7f50;
+  width: 360px;
+}
+
+.under-password-2 {
+  border-bottom: double 6px #ff7f50;
+  width: 330px;
+}
+
+// .under-mypost {
+//   border-bottom: double 6px #ff7f50;
+//   width: 125px;
+// }

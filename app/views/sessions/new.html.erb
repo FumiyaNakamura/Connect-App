@@ -1,29 +1,27 @@
 <div class="row">
-  <h1>ログイン画面</h1>
+  <h1 class="under col-md-offset-5">ログイン画面</h1>
   <br>
-  
-  <%= form_for(:session, url: login_path) do |f| %>
-    <div class="margin">
-      <%= f.label :メールアドレス %><br>
-      <%= f.email_field :email %><br>
-    </div>
-    
-    <div class="margin">
-      <%= f.label :パスワード %>
-      <%= link_to "パスワードを忘れた", new_password_reset_path %><br>
-      <%= f.password_field :password %><br>
-    </div>
-    
-    <div class="margin">
-      <%= f.label :remember_me do %>
-        <%= f.check_box :remember_me %>
-        <span>ログイン状態を保持する</span>
-      <% end %>
-    </div>
-    
-    <%= f.submit :ログイン, class: "btn btn-danger margin" %><br>
-  
-  <% end %>
-  
-  <%= link_to "新規登録はこちら", signup_path, class: "margin" %>
+</div>
+<div class="row">  
+  <div class="col-md-14 col-md-offset-1">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <div class="margin">
+        <%= f.label :メールアドレス %><br>
+        <%= f.email_field :email %><br>
+      </div>
+      <div class="margin">
+        <%= f.label :パスワード %>
+        <%= link_to "パスワードを忘れた", new_password_reset_path %><br>
+        <%= f.password_field :password %><br>
+      </div>
+      <div class="margin">
+        <%= f.label :remember_me do %>
+          <%= f.check_box :remember_me %>
+          <span>ログイン状態を保持する</span>
+        <% end %>
+      </div>
+      <%= f.submit :ログイン, class: "btn btn-info margin" %><br>
+    <% end %>
+    <%= link_to "新規登録はこちら", signup_path, class: "margin" %>
+  </div>
 </div>

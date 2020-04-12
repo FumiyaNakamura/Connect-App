@@ -1,18 +1,23 @@
-<h1>ユーザー一覧</h1>
+<div class="row">
+  <h1 class="under col-md-offset-5">ユーザー一覧</h1>
+  <br>
+</div>
 
-<%= will_paginate %>
-
-<ul>
-    <% @users.each do |user| %>
-      <p>
-          <% if user.image? %>
-          <%= image_tag user.image.url, :size =>'100x100' %>
-          <% else %>
-          <%= image_tag "default.jpg", :size =>'100x100' %>
+<div class="row">  
+  <div class="col-md-14 col-md-offset-4">
+    <%= will_paginate %>
+      <ul>
+          <% @users.each do |user| %>
+            <p>
+                <% if user.image? %>
+                <%= image_tag user.image.url, :size =>'100x100' %>
+                <% else %>
+                <%= image_tag "default.jpg", :size =>'100x100' %>
+                <% end %>
+                <%= link_to user.name, user %>
+            </p>
           <% end %>
-          <%= link_to user.name, user %>
-      </p>
-    <% end %>
-</ul>
-
-<%= will_paginate %>
+      </ul>
+    <%= will_paginate %>
+  </div>
+</div>

@@ -2,16 +2,19 @@
     <% render "shared/error_messages", object: f.object %>
     <div>
         <%= f.label :タイトル  %><br>
-        <%= f.text_area :title  %><br>
+        <%= f.text_field :title  %><br>
     </div>
     <div>
         <%= f.label :内容  %><br>
-        <%= f.text_area :content  %><br>
+        <%= f.text_field :content  %><br><br>
     </div>
-    <%= f.submit "投稿する", class: "btn btn-default" %>
     <span>
-        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %><br>
     </span>
+    <%= f.submit "投稿する", class: "btn btn-info", id: "initial" %>
+    <!--<span>-->
+    <!--    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>-->
+    <!--</span>-->
 <% end %>
     
 <script type="text/javascript">
