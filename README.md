@@ -1,7 +1,7 @@
 ## 概要
 
-Connect（URL:[https://connectappfumiya.herokuapp.com/）](https://connectappfumiya.herokuapp.com/））は、
-日々の頑張りを共有してモチベーションを上げるサービスです。
+Connect（URL:<https://connectappfumiya.herokuapp.com>）
+は、日々の頑張りを共有してモチベーションを上げるサービスです。
 
 今日の取組みや成果について投稿することで、あなたの頑張りを共有できます。
 
