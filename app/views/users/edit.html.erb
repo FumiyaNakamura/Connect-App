@@ -6,12 +6,12 @@
 </div>
 
 <h1 class="col-md-offset-5">
-  <% if @user.image? %>
-    <%= image_tag @user.image.url, :size =>'100x100'  %>
-  <% else %>
-    <%= image_tag "default.jpg", :size =>'100x100' %>
-  <% end %>
-  <%= @user.name %>
+    <% if @user.image? %>
+        <%= image_tag @user.image.url, :size =>'100x100'  %>
+    <% else %>
+        <%= image_tag "default.jpg", :size =>'100x100' %>
+    <% end %>
+    <%= @user.name %>
 </h1>
 
 <%= render "layouts/form" %>

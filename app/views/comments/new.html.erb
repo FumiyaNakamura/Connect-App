@@ -1,48 +1,48 @@
 <div>
-  <% if @post.user.image? %>
-    <%= image_tag @post.user.image.url %>
-  <% else %>
-    <%= image_tag "default.jpg", :size =>"50x50" %>
-  <% end %>
-  <%= @post.user.name %>
-  <div class="panel panel-default post-width">
-    <div class="panel-heading">
-      <%= @post.title %>
-    </div>
-    <div class="panel-body">
-      <p><%= @post.content %></p>
-      <% if @post.image.file.nil? %>
-      <% else %> 
-        <%= image_tag @post.image.url %>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div>
-  <% if @post.comments.any? %>
-    <% @post.comments.each do |comment| %>
-      <% if comment.user.image? %>
-        <%= image_tag comment.user.image.url %>
-      <% else %>
+    <% if @post.user.image? %>
+        <%= image_tag @post.user.image.url %>
+    <% else %>
         <%= image_tag "default.jpg", :size =>"50x50" %>
-      <% end %>
-      <%= comment.user.name %>
-      <div class="panel panel-default post-width">
-        <div class="panel-body">
-          <p><%= comment.content %></p>
-          <p><%= time_ago_in_words(comment.created_at) %>前に作成</p>
-          <% if current_user?(comment.user) %>
-            <p><%= link_to "削除", post_comments_path(comment.post), method: :delete, data: { confirm: "本当に消しますか？" } %></p>
-          <% end %>
-        </div>
-      </div>
     <% end %>
-  <% end %>
+    <%= @post.user.name %>
+    <div class="panel panel-default post-width">
+        <div class="panel-heading">
+            <%= @post.title %>
+        </div>
+        <div class="panel-body">
+            <p><%= @post.content %></p>
+            <% if @post.image.file.nil? %>
+            <% else %> 
+                <%= image_tag @post.image.url %>
+            <% end %>
+        </div>
+    </div>
 </div>
 <div>
-  <%= form_for([@post, @comment]) do |f| %>
-    <p><%= f.label :コメント, class: "mt-50px" %></p>
-    <p><%= f.text_field :content %></p>
-    <p><%= f.submit "コメントする", class: "btn btn-info mt-10px" %></p>
-  <% end %>
+    <% if @post.comments.any? %>
+        <% @post.comments.each do |comment| %>
+            <% if comment.user.image? %>
+                <%= image_tag comment.user.image.url %>
+            <% else %>
+                <%= image_tag "default.jpg", :size =>"50x50" %>
+            <% end %>
+            <%= comment.user.name %>
+            <div class="panel panel-default post-width">
+                <div class="panel-body">
+                    <p><%= comment.content %></p>
+                    <p><%= time_ago_in_words(comment.created_at) %>前に作成</p>
+                    <% if current_user?(comment.user) %>
+                        <p><%= link_to "削除", post_comments_path(comment.post), method: :delete, data: { confirm: "本当に消しますか？" } %></p>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+</div>
+<div>
+    <%= form_for([@post, @comment]) do |f| %>
+        <p><%= f.label :コメント, class: "mt-50px" %></p>
+        <p><%= f.text_field :content, class: "form-size-lg" %></p>
+        <p><%= f.submit "コメントする", class: "btn btn-info button-size-lg mt-10px" %></p>
+    <% end %>
 </div>

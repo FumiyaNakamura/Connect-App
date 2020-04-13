@@ -5,8 +5,8 @@
   <div class="mt-70px">
     <%= form_for(:password_reset, url: password_resets_path) do |f| %>
       <p><%= f.label :メールアドレス %></p>
-      <p><%= f.email_field :email %></p>
-      <p><%= f.submit "送信", class: "btn btn-info mt-30px" %></p>
+      <p><%= f.email_field :email, class: "form-size-lg" %></p>
+      <p><%= f.submit "送信", class: "btn btn-info button-size-lg mt-30px" %></p>
     <% end %>
   </div>
 </div>

@@ -1,29 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* 共通 */
-
-body {
-  padding-top: 60px;
-}
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.center {
-  text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
-}
-
-
 /* トップページの背景画像 */
 .home-background-image {
   background-image: url(home.jpg);
@@ -98,30 +75,15 @@ textarea {
   width: 25%;
 }
 
-input[type="text"] {
-        width: 1000px;
-        height: 40px;
-    }
-    
-input[type="text_area"] {
-        width: 1000px;
-        height: 40px;
-    }
+.form-size-lg {
+  width: 1000px;
+  height: 40px;
+}
 
-input[type="email"] {
-        width: 1000px;
-        height: 40px;
-    }
-
-input[type="password"] {
-        width: 1000px;
-        height: 40px;
-    }
-    
-input[type="submit"] {
-        width: 1000px;
-        height: 40px;
-    }
+.button-size-lg {
+  width: 1000px;
+  height: 40px;
+}
     
 /*  下線 */
 .underline-common {
@@ -170,6 +132,11 @@ input[type="submit"] {
   width: 88%;
 }
 
+/* パディング */
+.pt-60px {
+  padding-top: 60px;
+}
+
 /*  マージン */
 .margin {
   margin: 5px 0 0 0;
@@ -213,4 +180,21 @@ input[type="submit"] {
 
 .mt-100px {
   margin: 100px 0 0 0;
+}
+
+/* その他 */
+.section {
+  overflow: auto;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
 }

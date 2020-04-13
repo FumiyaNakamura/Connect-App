@@ -1,6 +1,7 @@
 require 'rails_helper'
 include SessionsHelper
 
+
 RSpec.describe FavoritesController, type: :controller do
   before do
         @user = FactoryBot.create(:activate_user)
