@@ -26,12 +26,13 @@ Connect（URL:<https://connectappfumiya.herokuapp.com>）
 
 ## 使用技術一覧
 * 言語
-    * Ruby(2.6.3)
+    * Ruby（2.6.3）
 * フレームワーク
     * Ruby on Rails（5.1.6）
 * RDB
-    * PostgreSQL
+    * PostgreSQL（0.20.0）
 * 開発環境
+    * AWScloud9 
     * MacOS
 * バージョン管理
     * Git 

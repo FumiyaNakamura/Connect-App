@@ -59,8 +59,8 @@ module SessionsHelper
      session[:forwarding_url] = request.original_url if request.get? 
   end
   
-  # ログイン中のユーザーがゲストユーザーであるならtrueを返す
-  def guest_user?
-    current_user == User.find_by(email: 'test@example.com')
+    # ログイン中のユーザーがゲストユーザーであるならfalseを返す
+  def not_guest_user?
+    current_user != User.find_by(email: 'test@example.com')
   end
 end
