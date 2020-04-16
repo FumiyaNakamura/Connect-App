@@ -46,6 +46,9 @@
 }
 
 /* 文字の加工 */
+.font-size-26px {
+  font-size: 26px;
+}
 
 .text_against_image{
   text-shadow: 0 0 10px #333;
@@ -180,6 +183,14 @@
 
 .mt-100px {
   margin: 100px 0 0 0;
+}
+
+.ml-20px {
+  margin: 0 0 0 20px;
+}
+
+.ml-60px {
+  margin: 0 0 0 60px;
 }
 
 /* その他 */
