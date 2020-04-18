@@ -32,7 +32,7 @@ Connect（URL:<https://connectappfumiya.herokuapp.com>）
 * RDB
     * PostgreSQL（0.20.0）
 * 開発環境
-    * AWScloud9 
+    * AWS Cloud9 
     * MacOS
 * バージョン管理
     * Git 
