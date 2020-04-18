@@ -9,9 +9,9 @@
         <% @users.each do |user| %>
           <p>
             <% if user.image? %>
-              <%= image_tag user.image.url, :size =>'100x100' %>
+              <%= image_tag user.image.url, class: "icon-size-100px" %>
             <% else %>
-              <%= image_tag "default.jpg", :size =>'100x100' %>
+              <%= image_tag "default.jpg", class: "icon-size-100px" %>
             <% end %>
             <%= link_to user.name, user %>
           </p>

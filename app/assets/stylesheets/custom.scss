@@ -135,6 +135,23 @@
   width: 88%;
 }
 
+/* ヘッダーのロゴのサイズ */
+.logo-size {
+  width: 100px;
+  height: 40px;
+}
+
+/* アイコンのサイズ */
+.icon-size-50px {
+  width: 50px;
+  height: 50px;
+}
+
+.icon-size-100px {
+  width: 100px;
+  height: 100px;
+}
+
 /* パディング */
 .pt-60px {
   padding-top: 60px;
@@ -209,3 +226,4 @@
 .center h1 {
   margin-bottom: 10px;
 }
+

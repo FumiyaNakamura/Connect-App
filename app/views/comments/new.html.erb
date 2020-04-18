@@ -2,7 +2,7 @@
     <% if @post.user.image? %>
         <%= image_tag @post.user.image.url %>
     <% else %>
-        <%= image_tag "default.jpg", :size =>"50x50" %>
+        <%= image_tag "default.jpg", class: "icon-size-50px" %>
     <% end %>
     <%= @post.user.name %>
     <div class="panel panel-default post-width">
@@ -24,7 +24,7 @@
             <% if comment.user.image? %>
                 <%= image_tag comment.user.image.url %>
             <% else %>
-                <%= image_tag "default.jpg", :size =>"50x50" %>
+                <%= image_tag "default.jpg", class: "icon-size-50px" %>
             <% end %>
             <%= comment.user.name %>
             <div class="panel panel-default post-width">

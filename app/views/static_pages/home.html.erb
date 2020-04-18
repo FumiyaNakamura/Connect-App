@@ -10,9 +10,9 @@
     </div>
     <% @feed_items.each do |post| %>
       <% if post.user.image? %>
-          <%= image_tag post.user.image.url, :size =>'50x50' %>
+          <%= image_tag post.user.image.url, class: "icon-size-50px" %>
       <% else %>
-          <%= image_tag "default.jpg", :size =>'50x50' %>
+          <%= image_tag "default.jpg", class: "icon-size-50px" %>
       <% end %>
       <%= link_to post.user.name, post.user %>
       <div class="panel panel-default">

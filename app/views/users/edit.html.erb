@@ -7,9 +7,9 @@
 
 <h1 class="col-md-offset-5">
     <% if @user.image? %>
-        <%= image_tag @user.image.url, :size =>'100x100'  %>
+        <%= image_tag @user.image.url, class: "icon-size-100px" %>
     <% else %>
-        <%= image_tag "default.jpg", :size =>'100x100' %>
+        <%= image_tag "default.jpg", class: "icon-size-100px" %>
     <% end %>
     <%= @user.name %>
 </h1>

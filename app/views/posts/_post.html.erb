@@ -1,7 +1,7 @@
 <% if @user.image? %>
     <%= image_tag @user.image.url %>
 <% else %>
-    <%= image_tag "default.jpg", :size =>'50x50' %>
+    <%= image_tag "default.jpg", class: "icon-size-50px" %>
 <% end %>
 <%= link_to post.user.name, post.user %>
 <div class="panel panel-default">

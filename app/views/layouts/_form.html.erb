@@ -3,16 +3,16 @@
     <%= form_for(@user, url: yield(:url)) do |f|  %>
       <%= render "shared/error_messages", object: f.object %>
       <p><%= f.label :名前  %></p>
-      <p><%= f.text_field :name, class: 'form-control'  %></p>
+      <p><%= f.text_field :name, class: 'form-control' %></p>
       
       <p><%= f.label :メールアドレス %></p>
-      <p><%= f.email_field :email, class: 'form-control'  %></p>
+      <p><%= f.email_field :email, class: 'form-control' %></p>
       
       <p><%= f.label :パスワード %></p>
-      <p><%= f.password_field :password, class: 'form-control'  %></p>
+      <p><%= f.password_field :password, class: 'form-control' %></p>
       
       <p><%= f.label :パスワード確認 %></p>
-      <p><%= f.password_field :password_confirmation, class: 'form-control'  %></p>
+      <p><%= f.password_field :password_confirmation, class: 'form-control' %></p>
       
       <%= f.label :アイコン画像 %>
       <p><%= f.file_field :image, accept: "image/jpg,image/gif,image/png" %></p>
