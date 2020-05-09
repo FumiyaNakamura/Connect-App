@@ -1,5 +1,5 @@
 <% if @user.image? %>
-  <%= image_tag @user.image.url %>
+  <%= image_tag @user.image.url, class: "icon-size-50px"  %> %>
 <% else %>
   <%= image_tag "default.jpg", class: "icon-size-50px" %>
 <% end %>
