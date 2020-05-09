@@ -152,6 +152,15 @@
   height: 100px;
 }
 
+/* フォントサイズ*/
+.font-17px{
+  font-size: 17px;
+}
+
+.font-20px{
+  font-size: 20px;
+}
+
 /* パディング */
 .pt-60px {
   padding-top: 60px;
@@ -212,6 +221,10 @@
 
 .ml-60px {
   margin: 0 0 0 60px;
+}
+
+.ml-900px {
+  margin: 0 0 0 900px;
 }
 
 /* その他 */
