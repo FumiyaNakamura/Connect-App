@@ -8,12 +8,14 @@
       <ul>
         <% @users.each do |user| %>
           <p>
-            <% if user.image? %>
-              <%= image_tag user.image.url, class: "icon-size-100px" %>
-            <% else %>
-              <%= image_tag "default.jpg", class: "icon-size-100px" %>
+            <% if user.activated == true %>
+              <% if user.image? %>
+                <%= image_tag user.image.url, class: "icon-size-100px" %>
+              <% else %>
+                <%= image_tag "default.jpg", class: "icon-size-100px" %>
+              <% end %>
+              <%= link_to user.name, user %>
             <% end %>
-            <%= link_to user.name, user %>
           </p>
         <% end %>
       </ul>
