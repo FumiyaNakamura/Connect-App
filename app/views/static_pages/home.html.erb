@@ -31,20 +31,20 @@
             <% end %>
           </div>
           <div class="mt-20px ml-900px">
-          <p><%= time_ago_in_words(post.created_at) %>前に作成</p>
-          <p>
-            <% if post.favorited_by?(current_user) %>
-              <%= link_to "いいねを消す:", post_favorites_path(post.id), method: :delete %>
-              <%= post.favorites.count %>
-            <% else %>
-              <%= link_to "いいねする:", post_favorites_path(post.id), method: :post %>
-              <%= post.favorites.count %>
+            <p><%= time_ago_in_words(post.created_at) %>前に作成</p>
+            <p>
+              <% if post.favorited_by?(current_user) %>
+                <%= link_to "いいねを消す:", post_favorites_path(post.id), method: :delete %>
+                <%= post.favorites.count %>
+              <% else %>
+                <%= link_to "いいねする:", post_favorites_path(post.id), method: :post %>
+                <%= post.favorites.count %>
+              <% end %>
+              <%= link_to "コメントする", new_post_comments_path(post.id) %>
+            </p>
+            <% if current_user?(post.user) %>
+              <%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %>
             <% end %>
-            <%= link_to "コメントする", new_post_comments_path(post.id) %>
-          </p>
-          <% if current_user?(post.user) %>
-            <%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %>
-          <% end %>
           </div>
         </div>
       </div>
