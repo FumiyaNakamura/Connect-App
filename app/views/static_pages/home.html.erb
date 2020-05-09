@@ -6,15 +6,17 @@
   </div>
   <div class="mt-100px">
     <div>
-      <h3 class="underline-timeline col-md-offset-5">タイムライン</h3>
+      <h1 class="underline-timeline ml-450px">タイムライン</h1>
     </div>
     <% @feed_items.each do |post| %>
+      <div class="mt-50px">
       <% if post.user.image? %>
           <%= image_tag post.user.image.url, class: "icon-size-50px" %>
       <% else %>
           <%= image_tag "default.jpg", class: "icon-size-50px" %>
       <% end %>
       <%= link_to post.user.name, post.user %>
+      </div>
       <div class="panel panel-default">
         <div class="panel-heading">
           <div class="font-20px ml-20px">
