@@ -1,5 +1,7 @@
-こんにちは <%= @user.name %>,
+こんにちは <%= @user.name %>さん
 
-Connectへようこそ! 以下のリンクをクリックして、アカウントを有効にしてください:
+登録ありがとうございます! 
+
+以下のリンクをクリックして、アカウントを有効にしてください:
 
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
