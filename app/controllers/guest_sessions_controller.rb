@@ -5,6 +5,6 @@ class GuestSessionsController < ApplicationController
     log_in(@user)
     flash[:success] = 'ゲストユーザーでログインしました。'
     flash[:warning] = 'ゲストユーザーは、ユーザー編集機能以外を使用できます。よろしくお願いします！'
-    redirect_to @user
+    redirect_to root_url
   end
 end
