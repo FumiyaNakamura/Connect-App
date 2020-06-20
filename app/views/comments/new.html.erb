@@ -1,6 +1,6 @@
 <div>
   <% if @post.user.image? %>
-    <%= image_tag @post.user.image.url %>
+    <%= image_tag @post.user.image.url, class: "icon-size-50px" %>
   <% else %>
     <%= image_tag "default.jpg", class: "icon-size-50px" %>
   <% end %>
@@ -25,7 +25,7 @@
   <% if @post.comments.any? %>
     <% @post.comments.each do |comment| %>
       <% if comment.user.image? %>
-        <%= image_tag comment.user.image.url %>
+        <%= image_tag comment.user.image.url, class: "icon-size-50px" %>
       <% else %>
         <%= image_tag "default.jpg", class: "icon-size-50px" %>
       <% end %>
