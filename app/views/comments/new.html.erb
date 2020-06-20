@@ -23,7 +23,7 @@
 </div>
 <div>
   <% if @post.comments.any? %>
-    <% @post.comments.each do |comment| %>
+    <% @post.comments.reverse_each do |comment| %>
       <% if comment.user.image? %>
         <%= image_tag comment.user.image.url, class: "icon-size-50px" %>
       <% else %>
