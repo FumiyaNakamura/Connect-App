@@ -27,6 +27,11 @@ class User < ApplicationRecord
     def User.new_token
       SecureRandom.urlsafe_base64
     end
+
+    def User.search(search)
+      return User.all unless search
+      User.where(['name LIKE ?', "%#{search}%"])
+    end
     
     # 永続セッションのためにユーザをデータベースに記憶する
     def remember
