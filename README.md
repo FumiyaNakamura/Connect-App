@@ -19,6 +19,7 @@ Connect（URL:<https://connectappfumiya.herokuapp.com>）
 * ユーザ編集機能
 * ユーザ詳細表示機能
 * ユーザログイン機能
+* ユーザ検索機能
 * 画像ファイルのアップロード機能
 * ページネーション機能
 * コメント機能
