@@ -8,6 +8,14 @@ class Post < ApplicationRecord
   validates :content, presence:true, length: { maximum: 300 }
   validate :image_size
   mount_uploader :image, ImageUploader
+
+  def Post.search(search)
+    if search
+      Post.where("title LIKE :name OR content LIKE :name", name: "%#{search}%")
+    else
+      Post.all
+    end
+  end
   
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?

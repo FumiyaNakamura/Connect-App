@@ -8,49 +8,7 @@
     <div>
       <h1 class="underline-timeline ml-450px">タイムライン</h1>
     </div>
-    <% @feed_items.each do |post| %>
-      <% if post.user.activated == true %>
-        <div class="mt-50px">
-        <% if post.user.image? %>
-          <%= image_tag post.user.image.url, class: "icon-size-50px" %>
-        <% else %>
-          <%= image_tag "default.jpg", class: "icon-size-50px" %>
-        <% end %>
-        <%= link_to post.user.name, post.user %>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <div class="font-20px ml-20px">
-              <%= post.title %>
-            </div>
-          </div>
-          <div class="panel-body">
-            <div class="ml-20px">
-              <p class="font-17px"><%= post.content %></p>
-              <% unless post.image.file.nil? %>
-                <%= image_tag post.image.url, class: "mt-20px" %>
-              <% end %>
-            </div>
-            <div class="mt-20px ml-900px">
-              <p><%= time_ago_in_words(post.created_at) %>前に作成</p>
-              <p>
-                <% if post.favorited_by?(current_user) %>
-                  <%= link_to "いいねを消す:", post_favorites_path(post.id), method: :delete %>
-                  <%= post.favorites.count %>
-                <% else %>
-                  <%= link_to "いいねする:", post_favorites_path(post.id), method: :post %>
-                  <%= post.favorites.count %>
-                <% end %>
-                <%= link_to "コメントする", new_post_comments_path(post.id) %>
-              </p>
-              <% if current_user?(post.user) %>
-                <%= link_to "削除", post, method: :delete, data: { confirm: "本当に消しますか？" } %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+    <%= render "shared/feed_items"%>
   </div>
 </div>
 <% else %>
